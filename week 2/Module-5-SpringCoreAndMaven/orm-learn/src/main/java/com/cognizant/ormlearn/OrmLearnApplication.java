@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.cognizant.ormlearn.model.Country;
+import com.cognizant.ormlearn.model.Employee;
 import com.cognizant.ormlearn.service.CountryService;
+import com.cognizant.ormlearn.service.EmployeeService;
 
 @SpringBootApplication
 public class OrmLearnApplication {
@@ -19,6 +21,8 @@ public class OrmLearnApplication {
 
     private static CountryService countryService;
 
+    private static EmployeeService employeeService;
+
     public static void main(String[] args) {
 
         ApplicationContext context =
@@ -26,7 +30,11 @@ public class OrmLearnApplication {
 
         countryService = context.getBean(CountryService.class);
 
+        employeeService = context.getBean(EmployeeService.class);
+
         testGetAllCountries();
+
+        testAddEmployee();
 
         LOGGER.info("Inside main");
     }
@@ -40,5 +48,20 @@ public class OrmLearnApplication {
         LOGGER.debug("countries={}", countries);
 
         LOGGER.info("End");
+    }
+
+    private static void testAddEmployee() {
+
+        LOGGER.info("Adding Employee");
+
+        Employee employee = new Employee();
+
+        employee.setId(101);
+        employee.setName("Akshaya");
+        employee.setSalary(50000);
+
+        employeeService.addEmployee(employee);
+
+        LOGGER.info("Employee Added Successfully");
     }
 }
