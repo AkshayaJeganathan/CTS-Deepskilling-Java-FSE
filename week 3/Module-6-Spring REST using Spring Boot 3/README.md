@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module demonstrates the implementation of Spring Boot RESTful Web Services using Spring Web Framework. The project covers creating a Spring Boot application, loading beans from Spring XML configuration, exposing REST endpoints, and retrieving country details using path variables.
+This module demonstrates the implementation of Spring Boot RESTful Web Services using Spring Web Framework. The project covers creating a Spring Boot application, loading beans from Spring XML configuration, exposing REST endpoints, retrieving country details using path variables, and implementing JWT-based authentication using Spring Security.
 
 ---
 
@@ -34,13 +34,35 @@ Spring Boot application starts successfully and embedded Tomcat server is initia
 
 ---
 
+# Hands On 1 - Spring Core – Load Country from Spring Configuration XML
+
+## Objective
+
+Load country details from Spring XML configuration and display the country information.
+
+## Implementation
+
+* Created **country.xml**
+* Configured Country bean
+* Created Country class
+* Loaded bean using **ClassPathXmlApplicationContext**
+* Displayed country details
+
+### Sample Output
+
+```
+Country [code=IN, name=India]
+```
+
+---
+
 # Hands On 2.1 - Hello World RESTful Web Service
 
 ## Objective
 
 Create a simple REST endpoint that returns a Hello World message.
 
-## URL
+### URL
 
 GET /hello
 
@@ -50,17 +72,19 @@ http://localhost:8086/hello
 
 ### Sample Response
 
+```
 Hello World!!
+```
 
 ## Implementation
 
 * Created HelloController
 * Implemented sayHello() method
-* Added start and end logs
+* Added Start and End log messages
 
 ## Screenshot
 
-Refer screenshots/hello-output.png
+Refer **screenshots/hello-output.png**
 
 ---
 
@@ -68,9 +92,9 @@ Refer screenshots/hello-output.png
 
 ## Objective
 
-Load country details from Spring XML configuration and expose them through a REST endpoint.
+Load India from Spring XML configuration and expose it as a REST service.
 
-## URL
+### URL
 
 GET /country
 
@@ -80,22 +104,23 @@ http://localhost:8086/country
 
 ### Sample Response
 
+```json
 {
-"code": "IN",
-"name": "India"
+    "code": "IN",
+    "name": "India"
 }
+```
 
 ## Implementation
 
-* Created country.xml configuration file
-* Defined Country bean
 * Created CountryController
-* Loaded bean using ClassPathXmlApplicationContext
-* Returned Country object as JSON response
+* Loaded Country bean from country.xml
+* Returned Country object
+* Automatic JSON conversion using Jackson
 
 ## Screenshot
 
-Refer screenshots/country-output.png
+Refer **screenshots/country-output.png**
 
 ---
 
@@ -103,9 +128,9 @@ Refer screenshots/country-output.png
 
 ## Objective
 
-Return country details based on the country code provided in the URL.
+Return a specific country based on the country code supplied in the URL.
 
-## URL
+### URL
 
 GET /countries/{code}
 
@@ -115,29 +140,92 @@ http://localhost:8086/countries/us
 
 ### Sample Response
 
+```json
 {
-"code": "US",
-"name": "United States"
+    "code": "US",
+    "name": "United States"
 }
+```
 
 ## Features
 
 * Path Variable support
-* Case-insensitive country search
-* Service layer implementation
+* Case-insensitive search
+* Service Layer implementation
 * JSON response generation
 
 ### Additional Examples
 
+```
 http://localhost:8086/countries/in
-
 http://localhost:8086/countries/de
-
 http://localhost:8086/countries/jp
+```
 
 ## Screenshot
 
-Refer screenshots/country-code-output.png
+Refer **screenshots/country-code-output.png**
+
+---
+
+# Hands On 5 - JWT Authentication Service
+
+## Objective
+
+Create an authentication service that validates user credentials and returns a JWT token.
+
+### URL
+
+POST /authenticate
+
+### Sample Request
+
+```
+POST http://localhost:8086/authenticate
+```
+
+### Request Body
+
+```json
+{
+    "username":"user",
+    "password":"pwd"
+}
+```
+
+### Sample Response
+
+```json
+{
+    "token":"eyJhbGciOiJIUzI1NiJ9..."
+}
+```
+
+## Implementation
+
+* Configured Spring Security
+* Created Authentication Controller
+* Implemented JWT Utility
+* Generated JWT Token
+* Returned token after successful authentication
+
+## Features
+
+* User Authentication
+* JWT Token Generation
+* Stateless Authentication
+* Spring Security
+* Secure REST APIs
+
+### Authorization Header
+
+```
+Authorization: Bearer <JWT_TOKEN>
+```
+
+## Screenshot
+
+Refer **screenshots/jwt-authentication-output.png**
 
 ---
 
@@ -145,44 +233,62 @@ Refer screenshots/country-code-output.png
 
 * Spring Boot 3
 * Spring Web
+* Spring MVC
 * RESTful Web Services
-* Controller Layer
-* Service Layer
-* Dependency Injection
+* Spring Core
 * XML Bean Configuration
 * ApplicationContext
 * ClassPathXmlApplicationContext
+* Dependency Injection
+* Controller Layer
+* Service Layer
 * @RestController
-* @GetMapping
 * @RequestMapping
+* @GetMapping
 * @PathVariable
 * JSON Serialization
+* Spring Security
+* JWT Authentication
+* Authentication Manager
+* JWT Token Generation
 * Maven Project Structure
 
 ---
 
 # Project Execution
 
-1. Import project into Eclipse.
+1. Import the project into Eclipse.
 2. Update Maven Project.
 3. Run SpringLearnApplication.java.
 4. Verify Tomcat starts successfully.
-5. Test endpoints using browser or Postman.
+5. Test all REST endpoints using Browser or Postman.
+6. Test JWT authentication using Postman.
+7. Verify the JWT token is generated successfully.
 
 ---
 
 # Screenshots
 
-Execution screenshots are available in the screenshots folder.
+Execution screenshots are available in the **screenshots** folder.
 
 * hello-output.png
 * country-output.png
 * country-code-output.png
+* jwt-authentication-output.png
 
 ---
 
-# Author
+# CTS Deep Skilling Java FSE - Week 3 Module 6
 
-Akshaya Jeganathan
+| Hands On | Project             | Exercise                                                 |
+| -------- | ------------------- | -------------------------------------------------------- |
+| 1        | spring-rest-handson | Create a Spring Web Project using Maven                  |
+| 1        | spring-rest-handson | Spring Core – Load Country from Spring Configuration XML |
+| 2.1      | spring-rest-handson | Hello World RESTful Web Service                          |
+| 2.2      | spring-rest-handson | REST - Country Web Service                               |
+| 2.3      | spring-rest-handson | REST - Get Country Based on Country Code                 |
+| 5        | JWT-handson         | Create Authentication Service that Returns JWT           |
 
-CTS Deep Skilling Java FSE - Week 3 Module 6
+---
+
+
