@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# ReactJS-HOL Hands-on 4 - Blog Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This hands-on demonstrates the implementation of React Component Lifecycle methods by creating a Blog Application that retrieves posts using the Fetch API.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create a React application named **blogapp** that loads blog posts from an external REST API using the **componentDidMount()** lifecycle hook and handles runtime errors using **componentDidCatch()**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- Fetch API
+- Node.js
+- NPM
+- Visual Studio Code
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+blogapp
+│
+├── src
+│   ├── App.js
+│   ├── Post.js
+│   ├── Posts.js
+│   └── index.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+# Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Class Component
+- Component Lifecycle
+- componentDidMount()
+- componentDidCatch()
+- Fetch API
+- State Management
+- Rendering Dynamic Data
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# API Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://jsonplaceholder.typicode.com/posts
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Execution
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```
 
-### Code Splitting
+Open
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+http://localhost:3000
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Sample Output
 
-### Making a Progressive Web App
+Displays blog post titles and descriptions fetched from JSONPlaceholder API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+# Concepts Covered
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React Class Components
+- Component Lifecycle Methods
+- componentDidMount()
+- componentDidCatch()
+- State
+- Fetch API
+- Dynamic Rendering
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Screenshots
 
-### `npm run build` fails to minify
+Available in screenshots folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- browser-output.png
+- appjs.png
+- postsjs.png
+- postjs.png
+- terminal.png
+
+---
+
+# Author
+
+Akshaya Jeganathan
