@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# ReactJS-HOL Hands-on 3 - Student Score Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This hands-on demonstrates the implementation of React Functional Components, Props, CSS Styling, and Component Rendering by creating a Student Score Calculator application.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Develop a React application named **scorecalculatorapp** that calculates and displays the average score of a student using a functional component.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- CSS
+- Node.js
+- NPM
+- Visual Studio Code
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+scorecalculatorapp
+│
+├── src
+│   ├── Components
+│   │      CalculateScore.js
+│   │
+│   ├── Stylesheets
+│   │      mystyle.css
+│   │
+│   ├── App.js
+│   └── index.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+# Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Functional Component
+- Props
+- CSS Styling
+- Average Score Calculation
+- Component Rendering
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Execution
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+Open
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+http://localhost:3000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+# Sample Output
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Student Score Calculator
 
-### Analyzing the Bundle Size
+Name : Akshaya Jeganathan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+School : ABC Higher Secondary School
 
-### Making a Progressive Web App
+Total Marks : 480
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Subjects : 6
 
-### Advanced Configuration
+Average Score : 80
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+# Concepts Covered
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Functional Components
+- React Props
+- CSS Styling
+- JSX
+- Component Rendering
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Screenshots
+
+Available inside screenshots folder.
+
+- browser-output.png
+- calculate-score.png
+- appjs.png
+- css.png
+- terminal.png
+
+---
+
+# Author
+
+Akshaya Jeganathan
