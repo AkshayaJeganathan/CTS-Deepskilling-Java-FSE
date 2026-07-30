@@ -1,0 +1,12 @@
+<div class="course-card" *ngIf="course">
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+    <span class="credits-badge">{{ course.credits }} Credits</span>
+  </div>
+  <h3 class="course-name">{{ course.name }}</h3>
+  <div class="card-footer">
+    <span class="course-id">ID: {{ course.id }}</span>
+    <!-- Step 21: Event Binding emitting course.id -->
+    <button class="btn btn-enroll" (click)="onEnroll()">Enroll</button>
+  </div>
+</div>

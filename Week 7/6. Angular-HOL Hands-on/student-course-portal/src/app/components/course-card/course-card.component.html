@@ -1,0 +1,22 @@
+<div class="course-card" *ngIf="course">
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+    <span class="credits-badge">{{ course.credits }} Credits</span>
+  </div>
+
+  <h3 class="course-name">{{ course.name }}</h3>
+
+  <div class="card-footer">
+    <span class="status-tag" [class.passed]="course.gradeStatus === 'passed'">
+      Status: {{ course.gradeStatus | uppercase }}
+    </span>
+    <!-- Step 65: Toggle label between 'Enroll' and 'Unenroll' -->
+    <button 
+      class="btn" 
+      [class.btn-unenroll]="isEnrolled()" 
+      [class.btn-enroll]="!isEnrolled()" 
+      (click)="toggleEnrollment()">
+      {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
+    </button>
+  </div>
+</div>

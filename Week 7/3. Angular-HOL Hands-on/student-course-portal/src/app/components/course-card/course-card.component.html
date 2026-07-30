@@ -1,0 +1,43 @@
+<!-- Step 34, 37: Custom directive appHighlight applied -->
+<!-- Step 29, 32: [ngClass]="cardClasses" getter binding -->
+<!-- Step 30: [ngStyle] setting dynamic left border color -->
+<div 
+  class="course-card" 
+  *ngIf="course" 
+  [ngClass]="cardClasses"
+  [ngStyle]="{ 'border-left-color': getBorderColor(), 'border-left-width': '6px', 'border-left-style': 'solid' }"
+  appHighlight="rgba(245, 158, 11, 0.2)">
+
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+    <!-- Step 36: Custom Pipe creditLabel applied -->
+    <span class="credits-badge">{{ course.credits | creditLabel }}</span>
+  </div>
+
+  <h3 class="course-name">{{ course.name }}</h3>
+
+  <!-- Step 27: *ngSwitch Directive displaying status badges -->
+  <div class="status-container" [ngSwitch]="course.gradeStatus">
+    <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+    <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+    <span *ngSwitchCase="'pending'" class="badge badge-pending">Pending</span>
+    <span *ngSwitchDefault class="badge badge-pending">Unknown</span>
+  </div>
+
+  <!-- Step 31: Toggleable expanded details block -->
+  <div class="details-pane" *ngIf="isExpanded">
+    <p>Course ID: <strong>{{ course.id }}</strong></p>
+    <p>Status: <strong>{{ course.gradeStatus | uppercase }}</strong></p>
+    <p>Credit Status: <strong>{{ course.credits | creditLabel }}</strong></p>
+  </div>
+
+  <div class="card-footer">
+    <!-- Step 31: Show Details toggle button -->
+    <button class="btn btn-secondary" (click)="toggleDetails()">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+    <button class="btn btn-enroll" (click)="onEnroll()">
+      {{ course.enrolled ? 'Enrolled' : 'Enroll' }}
+    </button>
+  </div>
+</div>

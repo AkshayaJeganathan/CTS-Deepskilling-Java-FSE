@@ -1,0 +1,16 @@
+=== Angular Project Structure & File Purpose Notes ===
+
+1. angular.json: Defines CLI workspace settings, build targets, assets, scripts, dev server configuration, and bundle budgets.
+2. tsconfig.json: Root TypeScript configuration specifying global compiler settings, target ES level, and module resolution.
+3. tsconfig.app.json: App-specific TypeScript compiler configuration extending tsconfig.json for application code compilation.
+4. package.json: Lists project dependencies, devDependencies, and npm script commands (ng serve, ng build, ng test).
+5. src/main.ts: Main application entry point that bootstraps the root module (AppModule) or standalone root component.
+6. src/app/app.module.ts: Root NgModule declaring components, directives, pipes, and importing core Angular framework modules.
+7. src/app/app.component.ts: Root component class controlling the base view and structural shell of the portal application.
+8. src/index.html: The host single-page HTML document containing standard meta tags and the <app-root> placeholder element.
+
+=== Budget Configuration Analysis (angular.json) ===
+In angular.json under architect > build > configurations > production > budgets:
+- maximumWarning (500kb): Triggers a compiler build warning when total initial bundle size exceeds 500 Kilobytes.
+- maximumError (1mb): Fails the production build execution when total initial bundle size exceeds 1 Megabyte.
+These thresholds prevent bundle bloat and ensure fast initial loading performance for the web application.

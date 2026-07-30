@@ -1,0 +1,18 @@
+<div class="page-container">
+  <h2>Available Courses</h2>
+  <p class="subtitle">Select and enroll in available semester courses below.</p>
+
+  <!-- Step 22: Render CourseCardComponent for each course object -->
+  <div class="courses-grid">
+    <app-course-card
+      *ngFor="let c of courses"
+      [course]="c"
+      (enrollRequested)="onEnroll($event)">
+    </app-course-card>
+  </div>
+
+  <!-- Step 24: Display selected course ID below list -->
+  <div class="selection-banner" *ngIf="selectedCourseId">
+    <p>Selected course ID: <strong>{{ selectedCourseId }}</strong></p>
+  </div>
+</div>

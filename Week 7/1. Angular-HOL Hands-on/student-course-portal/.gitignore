@@ -1,0 +1,24 @@
+# Angular generated files & directories
+/node_modules
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Miscellaneous
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

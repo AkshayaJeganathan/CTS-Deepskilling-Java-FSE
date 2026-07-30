@@ -1,0 +1,32 @@
+<div class="page-container">
+  <h2>Student Profile & Enrolled Courses</h2>
+  <p class="subtitle">Real-time list of enrolled courses fetched from EnrollmentService.</p>
+
+  <div class="profile-card">
+    <div class="avatar">🎓</div>
+    <div class="info">
+      <h3>Alex Johnson</h3>
+      <p>Student ID: <strong>STU-2026-9942</strong> | Major: Computer Science</p>
+    </div>
+    <button (click)="refreshList()" class="btn-refresh">🔄 Sync Enrollment List</button>
+  </div>
+
+  <div class="section-title">Enrolled Courses ({{ enrolledCourses.length }})</div>
+
+  <div *ngIf="enrolledCourses.length > 0; else noEnrollments" class="enrolled-grid">
+    <div *ngFor="let course of enrolledCourses" class="enrolled-card">
+      <div class="card-head">
+        <span class="code">{{ course.code }}</span>
+        <span class="credits">{{ course.credits }} Credits</span>
+      </div>
+      <h4>{{ course.name }}</h4>
+      <p class="status">Grade Status: <span class="highlight">{{ course.gradeStatus }}</span></p>
+    </div>
+  </div>
+
+  <ng-template #noEnrollments>
+    <div class="empty-banner">
+      <p>You have not enrolled in any courses yet. Visit the Courses tab to enroll.</p>
+    </div>
+  </ng-template>
+</div>

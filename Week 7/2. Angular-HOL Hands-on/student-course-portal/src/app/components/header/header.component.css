@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.portal-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text-main);
+  background-color: rgba(79, 70, 229, 0.2);
+}

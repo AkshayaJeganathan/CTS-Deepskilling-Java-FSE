@@ -1,0 +1,33 @@
+<div class="page-container">
+  <h2>Course Directory</h2>
+  <p class="subtitle">Browse available courses with dynamic filtering and grade status indicators.</p>
+
+  <!-- Step 25: Loading State Indicator -->
+  <div *ngIf="isLoading" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading courses...</p>
+  </div>
+
+  <!-- Step 25, 28: Content Grid with ngIf else block -->
+  <div *ngIf="!isLoading">
+    <div *ngIf="courses.length > 0; else noCourses" class="courses-grid">
+      <!-- Step 26: *ngFor with trackBy -->
+      <app-course-card
+        *ngFor="let course of courses; let i = index; trackBy: trackByCourseId"
+        [course]="course"
+        (enrollRequested)="onEnroll($event)">
+      </app-course-card>
+    </div>
+
+    <!-- Step 28: Fallback template for empty courses array -->
+    <ng-template #noCourses>
+      <div class="empty-state">
+        <p>No courses available at this time.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="selection-banner" *ngIf="selectedCourseId">
+    <p>Selected Course ID: <strong>{{ selectedCourseId }}</strong></p>
+  </div>
+</div>

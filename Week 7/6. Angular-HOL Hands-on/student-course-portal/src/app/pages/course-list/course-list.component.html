@@ -1,0 +1,14 @@
+<div class="page-container">
+  <h2>Course Directory (Shared Service Data)</h2>
+  <p class="subtitle">Courses provided via Dependency Injection from CourseService.</p>
+
+  <!-- Step 62: Shared singleton test widget -->
+  <app-course-summary-widget></app-course-summary-widget>
+
+  <!-- Step 67: Component-scoped provider notification component -->
+  <app-notification></app-notification>
+
+  <div class="courses-grid">
+    <app-course-card *ngFor="let course of courses" [course]="course"></app-course-card>
+  </div>
+</div>
